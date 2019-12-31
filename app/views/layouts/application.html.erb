@@ -13,6 +13,16 @@
   </head>
 
   <body>
+    <% if current_user %>
+      <h2> Welcome <%= current_user.email %>!</h2>
+    <% else %>
+      <h2> No current user </h2>
+    <% end %>
+    <% if session %>
+      <h2> session keys: <%= session.keys %></h2>
+    <% else %>
+      <h2> no session keys </h2>
+    <% end %>
     <%= yield %>
   </body>
 </html>
